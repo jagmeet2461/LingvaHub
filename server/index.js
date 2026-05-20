@@ -218,3 +218,7 @@ app.listen(PORT, () => {
   console.log(`   🔑 Gemini Key     : ${process.env.GEMINI_API_KEY ? '✓ Set' : '✗ Missing!'}`);
   console.log(`   🔄 Fallback       : MyMemory API (free)\n`);
 });
+
+app.get("/", (req, res) => {
+  res.send("LingvaHub Backend Running 🚀");
+});
