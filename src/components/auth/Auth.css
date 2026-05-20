@@ -1,0 +1,291 @@
+/* ══════════════════════════════════════════════════════════
+   AUTH PAGES
+══════════════════════════════════════════════════════════ */
+.auth-page {
+  min-height: calc(100vh - var(--navbar-h));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-8) var(--spacing-4);
+  background: var(--bg-page);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-page::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(ellipse, rgba(91,94,244,0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* ── Card ─────────────────────────────────────────────────*/
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-2xl);
+  padding: var(--spacing-8);
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  animation: fadeUp 0.4s ease both;
+}
+
+/* ── Logo ─────────────────────────────────────────────────*/
+.auth-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  justify-content: center;
+  margin-bottom: var(--spacing-6);
+}
+
+.auth-logo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-lg);
+  background: var(--brand-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: var(--shadow-brand);
+}
+
+.auth-logo-text {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+/* ── Titles ───────────────────────────────────────────────*/
+.auth-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: var(--spacing-2);
+}
+
+.auth-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: var(--spacing-6);
+  line-height: 1.5;
+}
+
+/* ── Google Button ────────────────────────────────────────*/
+.auth-google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-3);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.7rem var(--spacing-4);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  margin-bottom: var(--spacing-5);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+  box-shadow: var(--shadow-xs);
+}
+
+.auth-google-btn:hover:not(:disabled) {
+  border-color: #4285f4;
+  box-shadow: 0 0 0 3px rgba(66,133,244,0.12);
+  transform: translateY(-1px);
+}
+
+.auth-google-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ── Divider ──────────────────────────────────────────────*/
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-5);
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-light);
+}
+
+.auth-divider span {
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+/* ── Form ─────────────────────────────────────────────────*/
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.auth-label {
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.auth-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.auth-input-icon {
+  position: absolute;
+  left: 13px;
+  color: var(--text-tertiary);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.auth-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.7rem var(--spacing-4) 0.7rem 40px;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.auth-input:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(91,94,244,0.12);
+  background: var(--bg-primary);
+}
+
+.auth-input::placeholder { color: var(--text-tertiary); }
+
+.auth-eye-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast);
+}
+
+.auth-eye-btn:hover { color: var(--text-primary); }
+
+/* ── Submit Button ────────────────────────────────────────*/
+.auth-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem var(--spacing-4);
+  background: var(--brand-gradient);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: var(--spacing-2);
+  box-shadow: var(--shadow-brand);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  font-family: inherit;
+}
+
+.auth-submit-btn:hover:not(:disabled) {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.auth-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ── Error ────────────────────────────────────────────────*/
+.auth-error {
+  background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.25);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-3) var(--spacing-4);
+  font-size: 0.85rem;
+  color: #dc2626;
+  margin-bottom: var(--spacing-4);
+  line-height: 1.5;
+}
+
+/* ── Footer text ──────────────────────────────────────────*/
+.auth-footer-text {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: var(--spacing-5);
+}
+
+.auth-link {
+  color: var(--brand-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.auth-link:hover { opacity: 0.75; }
+
+/* ── Spinner ──────────────────────────────────────────────*/
+.auth-spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255,255,255,0.35);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+.auth-google-btn .auth-spinner {
+  border-color: rgba(91,94,244,0.25);
+  border-top-color: var(--brand-primary);
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Responsive ───────────────────────────────────────────*/
+@media (max-width: 480px) {
+  .auth-card { padding: var(--spacing-6) var(--spacing-5); border-radius: var(--radius-xl); }
+  .auth-title { font-size: 1.35rem; }
+}
