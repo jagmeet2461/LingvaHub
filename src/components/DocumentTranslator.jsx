@@ -59,7 +59,7 @@ export default function DocumentTranslator() {
   const [isDragging, setIsDragging]   = useState(false);
   const inputRef = useRef(null);
 
-  const BACKEND = 'http://localhost:5000';
+const BACKEND = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
   function handleFileChange(e) {
     const f = e.target.files[0];
